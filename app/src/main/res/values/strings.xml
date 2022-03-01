@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">StudentRecyclerView</string>
+    <string-array name="Student_Name">
+        <item> Steve </item>
+        <item> Bob </item>
+    </string-array>
+    <string-array name="Student_Num">
+        <item> 800-588-2300</item>
+        <item>800-247-3650</item>
+    </string-array>
+</resources>
