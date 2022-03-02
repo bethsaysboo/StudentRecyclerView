@@ -2,18 +2,21 @@ package android.example.studentrecyclerview;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class EditPage extends AppCompatActivity implements View.OnClickListener{
 
     String data1,data2;
+    public static final String EXTRA_NAME="android.example.studentrecyclerview.EXTRA_NAME";
+    public static final String EXTRA_PN="android.example.studentrecyclerview.EXTRA_PN";
 
-
-TextView EditName,Editpn;
+    EditText EditName,Editpn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,11 +56,30 @@ TextView EditName,Editpn;
             case R.id.Submitbtn:
                 EditName.setText(data1);
                 Editpn.setText(data2);
+
                 break;
             case R.id.Cancelbtn:
-
+                openActivityMain();
                 break;
         }
 
+    }
+
+    private void openActivityMain() {
+        Intent intent= new Intent(this,MainActivity.class);
+        startActivity(intent);
+    }
+    private void reassignText(){
+        EditText editText1= (EditText)findViewById(R.id.editNameET);
+        String newName= editText1.getText().toString();
+
+        EditText editText2= (EditText)findViewById(R.id.EditPNet);
+        String newPN= editText2.getText().toString();
+
+
+        Intent intent= new Intent(this,MainActivity.class);
+        intent.putExtra(EXTRA_NAME, newName);
+        intent.putExtra(EXTRA_PN, newPN);
+        startActivity(intent);
     }
 }

@@ -37,13 +37,13 @@ public class RV_Adaptor extends RecyclerView.Adapter<RV_Adaptor.MyViewHolder>{
 
     }
 
+
+
     @Override
+
+
+
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-
-    }
-
-
-    public void onBindViewHolder(@NonNull MyViewHolder holder) {
         this.holder = holder;
         this.position = position;
 
@@ -80,6 +80,10 @@ public class RV_Adaptor extends RecyclerView.Adapter<RV_Adaptor.MyViewHolder>{
             pnTextView= itemView.findViewById(R.id.pnTextView);
             myImage= itemView.findViewById(R.id.imageView);
             mainLayout= itemView.findViewById(R.id.mainLayout);
+
+
+
         }
+
     }
 }
